@@ -4,13 +4,6 @@ pipeline {
         nodejs 'Nodejs'
     }
     stages {
-        stage('Build') { 
-            steps {
-                echo 'Building...'
-                sh 'npm install' 
-                sh 'npm run build' 
-            }
-        }
         stage('Unit Tests') { 
             steps {
                 echo 'Testing 1...'
@@ -23,6 +16,13 @@ pipeline {
                     echo 'Testing 2...'
                     sh 'npm run e2e'              
                 }           
+        }
+        stage('Build') { 
+            steps {
+                echo 'Building...'
+                sh 'npm install' 
+                sh 'npm run build' 
+            }
         }
     }
 }
