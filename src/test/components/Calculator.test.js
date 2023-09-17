@@ -1,8 +1,8 @@
 import '@testing-library/jest-dom'
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import LabelInput from '../../Components/Label';
-import Calculator from '../../Components/Calculator';
+import LabelInput from '../../components/Label';
+import Calculator from '../../components/Calculator';
 
 
 
