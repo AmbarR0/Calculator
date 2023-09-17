@@ -1,9 +1,11 @@
 import '@testing-library/jest-dom'
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-
-import LabelInput from '../../Components/Label'
+import LabelInput from '../../Components/Label';
 import Calculator from '../../Components/Calculator';
+
+
+
 test('render label', () => {
     render(<LabelInput text="1234" sw = {1}/>);
     const elemento = screen.getByText("1234")
