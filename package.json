@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "test": "jest",
-    "e2e": "cypress run",
+    "e2e": "start-server-and-test dev 5173 cy:run",
+    "cy:run": "cypress run",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
