@@ -58,16 +58,16 @@ const Calculator = () => {
   };
 
   return (
-    <div className="bg-slate-200 p-10 h-auto w-auto  flex justify-center align-middle items-center flex-row shadow-sm shadow-slate-400">
-      <div className="bg-rose-300 p-10 rounded-2xl shadow-md shadow-slate-700 border-rose-200 border-2">
-        <div className="grid grid-rows-2 gap-y-5 p-y-5 mb-5">
+    <div id="div1" className="bg-slate-200 p-10 h-auto w-auto  flex justify-center align-middle items-center flex-row shadow-sm shadow-slate-400">
+      <div id="div2" className="bg-rose-300 p-10 rounded-2xl shadow-md shadow-slate-700 border-rose-200 border-2">
+        <div id="div3"className="grid grid-rows-2 gap-y-5 p-y-5 mb-5">
           <LabelInput text={text} sw={1} />
           <LabelInput solved={solution} sw={0} />
         </div>
 
         <div className="grid grid-cols-4 gap-5 font-medium text-2xl">
           {dataButtons.map((id) => (
-            <ButtonC name={id} sendType={(id) => sendType(id)} />
+            <ButtonC key={id} name={id} sendType={(id) => sendType(id)} />
           ))}
         </div>
       </div>
