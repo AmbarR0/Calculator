@@ -1,28 +1,28 @@
 pipeline {
     agent any
     tools {
-        nodejs 'node20'
+        nodejs 'Nodejs'
     }
     stages {
-        stage('Build') {
+        stage('Build') { 
             steps {
-                sh 'npm install '
+                echo 'Building...'
+                sh 'npm install' 
+                sh 'npm run build' 
             }
         }
-        stage('Test') {
+        stage('Unit Tests') { 
             steps {
-                sh ' npm run test'
+                echo 'Testing 1...'
+                sh 'npm run test' 
             }
         }
-        stage('Test e2e') {
-            steps {
-               sh 'npm run dev && npm run e2e'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
-            }
+    
+        stage('Integration Tests') {
+                steps {
+                    echo 'Testing 2...'
+                    sh 'npm run e2e'              
+                }           
         }
     }
 }
